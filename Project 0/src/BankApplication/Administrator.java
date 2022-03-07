@@ -70,13 +70,13 @@ public class Administrator extends Employee implements java.io.Serializable {
 	public static void newDeposit(String name,double deposit) {
 		double newBal=AccountActivity.moneyEntry(Customers.map.get(name).amount, deposit);
 		Customers.map.get(name).amount= Customers.newBalance(name,newBal); //change this from SerialDeserial
-		System.out.println("Showing your balance: $"+Customers.map.get(name).amount);
+		System.out.println("Showing "+Customers.map.get(name).userName+"'s balance: $"+String.format("%.2f",Customers.map.get(name).amount));
 	}
 	//Withdraw money
 	public static void newWithdraw(String name, double withdraw) {
 		double newBal=AccountActivity.cusWithdraw(Customers.map.get(name).amount, withdraw);
 		Customers.map.get(name).amount=Customers.newBalance(name,newBal);
-		System.out.println("Showing your balance: $"+Customers.map.get(name).amount);
+		System.out.println("Showing "+Customers.map.get(name).userName+"balance: $"+String.format("%.2f",Customers.map.get(name).amount));
 	}
 	//Transfers money
 	public static void accTransfer(String name1,String name2, double money) {
@@ -85,15 +85,15 @@ public class Administrator extends Employee implements java.io.Serializable {
 		
 		double newBal2=AccountActivity.moneyEntry(Customers.map.get(name2).amount, money);
 		Customers.map.get(name2).amount=Customers.newBalance(name2,newBal2);
-		System.out.println("Showing balance of "+Customers.map.get(name1).userName +": $"+Customers.map.get(name1).amount);
-		System.out.println("Showing your balance"+Customers.map.get(name2).userName+": $"+Customers.map.get(name2).amount);
+		System.out.println("Showing balance of "+Customers.map.get(name1).userName +": $"+String.format("%.2f",Customers.map.get(name1).amount));
+		System.out.println("Showing balance of"+Customers.map.get(name2).userName+": $"+String.format("%.2f",Customers.map.get(name2).amount));
 	}
 	
 	
 	public static void accountInformation(String name) {
 		System.out.println("Account Name: "+Customers.map.get(name).userName);
 		System.out.println("Account password: "+Customers.map.get(name).password);
-		System.out.println("Account Balance: "+Customers.map.get(name).amount);
+		System.out.println("Account Balance: "+String.format("%.2f",Customers.map.get(name).amount));
 		//Real First name
 		//Real Last  name
 	}

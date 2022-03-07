@@ -72,13 +72,13 @@ public class Employee implements java.io.Serializable {
 	
 	
 	public static void accountInformation(String name) {
-//		if(name.equals(Customers.map.get(name).userName)) {
+		if(name.equals(Customers.map.get(name).userName)) {
 		System.out.println("Account Name: "+Customers.map.get(name).userName);
 		System.out.println("Account password: "+Customers.map.get(name).password);
-		System.out.println("Account Balance: "+Customers.map.get(name).amount);
-//		}else {
-//			System.out.println("There is no one who matches this time");
-//		}
+		System.out.println("Account Balance: "+String.format("%.2f",Customers.map.get(name).amount));
+		}else {
+			System.out.println("There is no one who matches this time");
+		}
 
 	}
 	
