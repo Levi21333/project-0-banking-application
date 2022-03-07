@@ -110,7 +110,7 @@ public class LobbyMenu {
 								String valid = input.next();
 								boolean approve1 = Employee.accApproval(valid);
 								approve = Customers.checkTheAccount(namelog, pwlog);
-								if(approve == true && approve1) { //stop here start
+								if(approve == true && approve1==true) { //stop here start
 									System.out.println("Do you want to make a deposit(please type 1), withdraw (please type 2), or transfer(please type 3)?");
 									decision = input.nextInt();
 									//continue here

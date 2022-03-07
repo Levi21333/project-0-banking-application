@@ -72,11 +72,14 @@ public class Employee implements java.io.Serializable {
 	
 	
 	public static void accountInformation(String name) {
+//		if(name.equals(Customers.map.get(name).userName)) {
 		System.out.println("Account Name: "+Customers.map.get(name).userName);
 		System.out.println("Account password: "+Customers.map.get(name).password);
 		System.out.println("Account Balance: "+Customers.map.get(name).amount);
-		//Real First name
-		//Real Last  name
+//		}else {
+//			System.out.println("There is no one who matches this time");
+//		}
+
 	}
 	
 	//This will be the approve or don't approve

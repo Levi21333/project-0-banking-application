@@ -11,7 +11,7 @@ public class AccountActivity {
 	}
 	
 	public static void balanceAccount(double balance, double entry) throws AccountException {
-		if (balance<0) {
+		if (entry<0) {
 			throw new AccountException("Cannot have a negative balance");
 		}
 		else if (balance<entry) {

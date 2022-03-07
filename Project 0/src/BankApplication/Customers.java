@@ -106,13 +106,13 @@ public class Customers implements java.io.Serializable{
 	public static void newDeposit(String name,double deposit) {
 		double newBal=AccountActivity.moneyEntry(map.get(name).amount, deposit);
 		map.get(name).amount= newBalance(name,newBal); //change this from SerialDeserial
-		System.out.println("Showing your balance: $"+map.get(name).amount);
+		System.out.println("Showing your balance: $"+String.format("%2f",map.get(name).amount));
 	}
 	//Withdraw money
 	public static void newWithdraw(String name, double withdraw) {
 		double newBal=AccountActivity.cusWithdraw(map.get(name).amount, withdraw);
 		map.get(name).amount=newBalance(name,newBal);
-		System.out.println("Showing your balance: $"+map.get(name).amount);
+		System.out.println("Showing your balance: $"+String.format("%2f",map.get(name).amount));
 	}
 	//Transfers money
 	public static void accTransfer(String name1,String name2, double money) {
@@ -121,8 +121,8 @@ public class Customers implements java.io.Serializable{
 		
 		double newBal2=AccountActivity.moneyEntry(map.get(name2).amount, money);
 		map.get(name2).amount=newBalance(name2,newBal2);
-		System.out.println("Showing balance of "+map.get(name1).userName +": $"+map.get(name1).amount);
-		System.out.println("Showing your balance"+map.get(name2).userName+": $"+map.get(name2).amount);
+		System.out.println("Showing balance of "+map.get(name1).userName +": $"+String.format("%2f",map.get(name1).amount));
+		System.out.println("Showing your balance"+map.get(name2).userName+": $"+String.format("%2f",map.get(name2).amount));
 	}
 	
 	//Last make a joint
